@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		img.image {
+			object-fit: cover;
+			height: 200px;	
+		}
+		section.astar_cmp{
+			position: absolute;
+			top: 320px;
+		}
+		section.dfs_cmp{
+			position: absolute;
+			top: 320px;
+			left: 270px;
+		}
+		section.bfs_cmp{
+			position: absolute;
+			top: 320px;
+			left: 540px;
+		}
+		section.greedy_cmp{
+			position: absolute;
+			top: 320px;
+			left: 810px;
+		}
+		table, th, td{
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		th, td{
+			padding: 5px;
+		}
+		section.table_01{
+			position: absolute;
+			top: 1600px;
+		}
+		section.para_02{
+			position: absolute;
+			top: 2240px;
+		}
+		section.para_03{
+			position: absolute;
+			top: 2540px;
+		}
+		section.astar_cmp_01{
+			position: absolute;
+			top: 2650px;
+		}
+		section.astar_cmp_02{
+			position: absolute;
+			top: 2650px;
+			left: 300px;
+		}
+		section.greedy_cmp_01{
+			position: absolute;
+			top: 2650px;
+			left: 600px;
+		}
+		section.greedy_cmp_02{
+			position: absolute;
+			top: 2650px;
+			left: 900px;
+		}
+		section.table_02{
+			position: absolute;
+			top: 3700px;
+		}
+		section.para_04{
+			position: absolute;
+			top: 4000px;
+		}
+	</style>
+	<title>Analysis of Various Path Planning Algorithms</title>
+</head>
+<body>
+	<h1>Analysis of Variosu Path Planning Algorithms</h1>
+	<h2>Haobo Chen</h2>
+	<p>Multiple path planning algorithms are implemented in this assignment. These algorithms include A-star, DFS, BFS and greedy best first search. Each of them has their pros and cons. This report will compare and analysis their difference and propose a use case when they are appropriate.</p>
+	<h3>1. Comparison with same start and goal point under difference scenes</h3>
+	<p>First of all, the performance of these algorithms will be compared in the setting of same start and end point on different maps.</p>
+	<section class="astar_cmp">
+		<a href="a_star_empty_01.png"><img src="a_star_empty_01.png" class="image" id="astar_01" alt="A-star result in empty space">
+		<p class="text_01">Figure 1. A-star result in empty space</p></a>
+		<a href="a_star_3_sec_01.png"><img src="a_star_3_sec_01.png" class="image" id="astar_01" alt="A-star result in empty space">
+		<p class="text_01">Figure 2. A-star result in 3 sec space</p></a>
+		<a href="a_star_misc_01.png"><img src="a_star_misc_01.png" class="image" id="astar_01" alt="A-star result in misc space">
+		<p class="text_01">Figure 3. A-star result in misc space</p></a>
+		<a href="a_star_narrow1_01.png"><img src="a_star_narrow1_01.png" class="image" id="astar_01" alt="A-star result in narrow1 space">
+		<p class="text_01">Figure 4. A-star result in narrow1 space</p></a>
+		<a href="a_star_narrow2_01.png"><img src="a_star_narrow2_01.png" class="image" id="astar_01" alt="A-star result in narrow2 space">
+		<p class="text_01">Figure 5. A-star result in narrow2 space</p></a>
+	</section>
+
+	<section class="dfs_cmp">
+		<a href="dfs_empty_01.png"><img src="dfs_empty_01.png" class="image" id="dfs_01" alt="DFS result in empty space">
+		<p class="text_01">Figure 6. DFS result in empty space</p></a>
+		<a href="dfs_3_sec_01.png"><img src="dfs_3_sec_01.png" class="image" id="dfs_01" alt="DFS result in empty space">
+		<p class="text_01">Figure 7. DFS result in 3 sec space</p></a>
+		<a href="dfs_misc_01.png"><img src="dfs_misc_01.png" class="image" id="dfs_01" alt="DFS result in misc space">
+		<p class="text_01">Figure 8. DFS result in misc space</p></a>
+		<a href="dfs_narrow1_01.png"><img src="dfs_narrow1_01.png" class="image" id="dfs_01" alt="DFS result in narrow1 space">
+		<p class="text_01">Figure 9. DFS result in narrow1 space</p></a>
+		<a href="dfs_narrow2_01.png"><img src="dfs_narrow2_01.png" class="image" id="dfs_01" alt="DFS result in narrow2 space">
+		<p class="text_01">Figure 10. DFS result in narrow2 space</p></a>
+	</section>
+
+	<section class="bfs_cmp">
+		<a href="bfs_empty_01.png"><img src="bfs_empty_01.png" class="image" id="bfs_01" alt="BFS result in empty space">
+		<p class="text_01">Figure 11. BFS result in empty space</p></a>
+		<a href="bfs_3_sec_01.png"><img src="bfs_3_sec_01.png" class="image" id="bfs_01" alt="BFS result in empty space">
+		<p class="text_01">Figure 12. BFS result in 3 sec space</p></a>
+		<a href="bfs_misc_01.png"><img src="bfs_misc_01.png" class="image" id="bfs_01" alt="BFS result in misc space">
+		<p class="text_01">Figure 13. BFS result in misc space</p></a>
+		<a href="bfs_narrow1_01.png"><img src="bfs_narrow1_01.png" class="image" id="bfs_01" alt="BFS result in narrow1 space">
+		<p class="text_01">Figure 14. BFS result in narrow1 space</p></a>
+		<a href="bfs_narrow2_01.png"><img src="bfs_narrow2_01.png" class="image" id="bfs_01" alt="BFS result in narrow2 space">
+		<p class="text_01">Figure 15. BFS result in narrow2 space</p></a>
+	</section>
+
+	<section class="greedy_cmp">
+		<a href="greedy_empty_01.png"><img src="greedy_empty_01.png" class="image" id="greedy_01" alt="Greedy result in empty space">
+		<p class="text_01">Figure 16. Greedy result in empty space</p></a>
+		<a href="greedy_3_sec_01.png"><img src="greedy_3_sec_01.png" class="image" id="greedy_01" alt="Greedy result in empty space">
+		<p class="text_01">Figure 17. Greedy result in 3 sec space</p></a>
+		<a href="greedy_misc_01.png"><img src="greedy_misc_01.png" class="image" id="greedy_01" alt="Greedy result in misc space">
+		<p class="text_01">Figure 18. Greedy result in misc space</p></a>
+		<a href="greedy_narrow1_01.png"><img src="greedy_narrow1_01.png" class="image" id="greedy_01" alt="Greedy result in narrow1 space">
+		<p class="text_01">Figure 19. Greedy result in narrow1 space</p></a>
+		<a href="greedy_narrow2_01.png"><img src="greedy_narrow2_01.png" class="image" id="greedy_01" alt="Greedy result in narrow2 space">
+		<p class="text_01">Figure 20. Greedy result in narrow2 space</p></a>
+	</section>
+
+	<section class="table_01">
+		<table>
+			<tr>
+				<th>Algorithm</th>
+				<th>Scene</th>
+				<th>Iteration</th> 
+				<th>Path Length</th>
+			</tr>
+
+			<tr>
+				<td>a-star</td>
+				<td>empty</td>
+				<td>2873</td>
+				<td>8</td>
+			</tr>
+			<tr>
+				<td>DFS</td>
+				<td>empty</td>
+				<td>1281</td>
+				<td>128</td>
+			</tr>
+			<tr>
+				<td>BFS</td>
+				<td>empty</td>
+				<td>3501</td>
+				<td>8</td>
+			</tr>
+			<tr>
+				<td>greedy</td>
+				<td>empty</td>
+				<td>81</td>
+				<td>8</td>
+			</tr>
+
+			<tr>
+				<td>a-star</td>
+				<td>misc</td>
+				<td>2611</td>
+				<td>9.8</td>
+			</tr>
+			<tr>
+				<td>DFS</td>
+				<td>misc</td>
+				<td>1590</td>
+				<td>95.8</td>
+			</tr>
+			<tr>
+				<td>BFS</td>
+				<td>misc</td>
+				<td>3235</td>
+				<td>9.8</td>
+			</tr>
+			<tr>
+				<td>greedy</td>
+				<td>misc</td>
+				<td>2074</td>
+				<td>17.8</td>
+			</tr>
+
+			<tr>
+				<td>a-star</td>
+				<td>narrow1</td>
+				<td>934</td>
+				<td>8</td>
+			</tr>
+			<tr>
+				<td>DFS</td>
+				<td>narrow1</td>
+				<td>685</td>
+				<td>66.2</td>
+			</tr>
+			<tr>
+				<td>BFS</td>
+				<td>narrow1</td>
+				<td>1568</td>
+				<td>8</td>
+			</tr>
+			<tr>
+				<td>greedy</td>
+				<td>narrow1</td>
+				<td>81</td>
+				<td>8</td>
+			</tr>
+
+			<tr>
+				<td>a-star</td>
+				<td>narrow2</td>
+				<td>1394</td>
+				<td>11.4</td>
+			</tr>
+			<tr>
+				<td>DFS</td>
+				<td>narrow2</td>
+				<td>649</td>
+				<td>62.6</td>
+			</tr>
+			<tr>
+				<td>BFS</td>
+				<td>narrow2</td>
+				<td>2095</td>
+				<td>11.4</td>
+			</tr>
+			<tr>
+				<td>greedy</td>
+				<td>narrow2</td>
+				<td>138</td>
+				<td>11.4</td>
+			</tr>
+
+			<tr>
+				<td>a-star</td>
+				<td>3 section</td>
+				<td>2538</td>
+				<td>14.2</td>
+			</tr>
+			<tr>
+				<td>DFS</td>
+				<td>3 section</td>
+				<td>1071</td>
+				<td>95.6</td>
+			</tr>
+			<tr>
+				<td>BFS</td>
+				<td>3 section</td>
+				<td>3165</td>
+				<td>14.2</td>
+			</tr>
+			<tr>
+				<td>greedy</td>
+				<td>3 section</td>
+				<td>905</td>
+				<td>14.4</td>
+			</tr>
+		</table>
+		<p>Table 1. Algorithm Outcome in Different Scenes with Same Start and Goal Point</p>
+	</section>
+	<section class="para_02">
+		<p>As shown by the figures above, BFS, a-star always produce the shortest path towards the goal. Greedy best first search produce a result that is less optimized under certain configuration. DFS, on the other hand, produce a bad result even if it usually have a low iteration count.</p>
+		<p>A-star algorithm is definitely the most robust and optimized path planning algorithm among these four because it reduced the amount of computation for a considerable amount by biasing the searching process towards the target. In addition, it still take the environment into account so that it won't miss the best route along the search. This is especially important when being applied to robotics because of robotics' nature of interating with unpredictable environment.</p>
+		<p>However, greedy best first search(GBFS) is still worth considering. If the robot is expected to work in an environment such that is stable and has minimum amount of obstacles, GBFS can be a better choice. By putting the robot in a more predictable environment, the robot is more likely to avoid the extra computation caused by incorrect prediction from GBFS. Moreover, GBFS significantly cut off the computational complexity. This can free up memory and power for the robot to perform other processes. </p>
+		<p>Finally, DFS and BFS may not be a good choice for path planning, but if the robot need to explore the entire map for some purpose. They can be more useful than the other two because neither A-star nor GBFS explore the entire map.In addition, for map exploration, DFS would be serve the purpose better. As shown by the statistisc, DFS generally have an iteration count that is less than half of BFS's iteration count.</p>
+	</section>
+	<section class="para_03">
+		<h3>2. Comparison with different start and goal points under difference scenes</h3>
+		<p>
+		In the previous section, the algorithms analyzed on whether they are appropriate for robot path planning. In this Section, algorithms fit for the purpose(A-star, GBFS) will be analyzed by performance given different start and goal point.
+		</p>
+	</section>
+	<section class="astar_cmp_01">
+		<a href="a_star_3_sec_01.png"><img src="a_star_3_sec_01.png" class="image" id="astar_01" alt="A-star result in empty space">
+		<p class="text_02">Figure 21. A-star result 1 in 3 sec space</p></a>
+		<a href="a_star_misc_01.png"><img src="a_star_misc_01.png" class="image" id="astar_01" alt="A-star result in misc space">
+		<p class="text_02">Figure 22. A-star result 1 in misc space</p></a>
+		<a href="a_star_narrow1_01.png"><img src="a_star_narrow1_01.png" class="image" id="astar_01" alt="A-star result in narrow1 space">
+		<p class="text_02">Figure 23. A-star result 1 in narrow1 space</p></a>
+		<a href="a_star_narrow2_01.png"><img src="a_star_narrow2_01.png" class="image" id="astar_01" alt="A-star result in narrow2 space">
+		<p class="text_02">Figure 24. A-star result 1 in narrow2 space</p></a>
+	</section>
+
+	<section class="astar_cmp_02">
+		<a href="a_star_3_sec_02.png"><img src="a_star_3_sec_02.png" class="image" id="astar_01" alt="A-star result in empty space">
+		<p class="text_02">Figure 25. A-star result 2 in 3 sec space</p></a>
+		<a href="a_star_misc_02.png"><img src="a_star_misc_02.png" class="image" id="astar_01" alt="A-star result in misc space">
+		<p class="text_02">Figure 26. A-star result 2 in misc space</p></a>
+		<a href="a_star_narrow2_02.png"><img src="a_star_narrow1_02.png" class="image" id="astar_01" alt="A-star result in narrow1 space">
+		<p class="text_02">Figure 27. A-star result 2 in narrow1 space</p></a>
+		<a href="a_star_narrow2_02.png"><img src="a_star_narrow2_02.png" class="image" id="astar_01" alt="A-star result in narrow2 space">
+		<p class="text_02">Figure 28. A-star result 2 in narrow2 space</p></a>
+	</section>
+
+	<section class="greedy_cmp_01">
+		<a href="greedy_3_sec_01.png"><img src="greedy_3_sec_01.png" class="image" id="greedy_01" alt="Greedy result in empty space">
+		<p class="text_01">Figure 29. Greedy result 1 in 3 sec space</p></a>
+		<a href="greedy_misc_01.png"><img src="greedy_misc_01.png" class="image" id="greedy_01" alt="Greedy result in misc space">
+		<p class="text_01">Figure 30. Greedy result 1 in misc space</p></a>
+		<a href="greedy_narrow1_01.png"><img src="greedy_narrow1_01.png" class="image" id="greedy_01" alt="Greedy result in narrow1 space">
+		<p class="text_01">Figure 31. Greedy result 1 in narrow1 space</p></a>
+		<a href="greedy_narrow2_01.png"><img src="greedy_narrow2_01.png" class="image" id="greedy_01" alt="Greedy result in narrow2 space">
+		<p class="text_01">Figure 32. Greedy result 1 in narrow2 space</p></a>
+	</section>
+
+	<section class="greedy_cmp_02">
+		<a href="greedy_3_sec_02.png"><img src="greedy_3_sec_02.png" class="image" id="greedy_01" alt="Greedy result in empty space">
+		<p class="text_01">Figure 33. Greedy result 2 in 3 sec space</p></a>
+		<a href="greedy_misc_02.png"><img src="greedy_misc_02.png" class="image" id="greedy_01" alt="Greedy result in misc space">
+		<p class="text_01">Figure 34. Greedy result 2 in misc space</p></a>
+		<a href="greedy_narrow1_02.png"><img src="greedy_narrow1_02.png" class="image" id="greedy_01" alt="Greedy result in narrow1 space">
+		<p class="text_01">Figure 35. Greedy result 2 in narrow1 space</p></a>
+		<a href="greedy_narrow2_02.png"><img src="greedy_narrow2_02.png" class="image" id="greedy_01" alt="Greedy result in narrow2 space">
+		<p class="text_01">Figure 36. Greedy result 2 in narrow2 space</p></a>
+	</section>
+
+	<section class="table_02">
+		<table>
+			<tr>
+				<th>Algorithm</th>
+				<th>Scene</th>
+				<th>Iteration</th> 
+				<th>Path Length</th>
+				<th></th>
+				<th>Algorithm</th>
+				<th>Scene</th>
+				<th>Iteration</th> 
+				<th>Path Length</th>
+			</tr>
+
+			<tr>
+				<td>a-star</td>
+				<td>3-section 1</td>
+				<td>3165</td>
+				<td>14.2</td>
+				<td></td>
+				<td>greedy</td>
+				<td>3-section 1</td>
+				<td>905</td>
+				<td>14.4</td>
+			</tr>
+
+			<tr>
+				<td>a-star</td>
+				<td>3-section 2</td>
+				<td>1694</td>
+				<td>8</td>
+				<td></td>
+				<td>greedy</td>
+				<td>3-section 2</td>
+				<td>647</td>
+				<td>8.4</td>
+			</tr>
+
+			<tr>
+				<td>a-star</td>
+				<td>misc 1</td>
+				<td>2611</td>
+				<td>9.8</td>
+				<td></td>
+				<td>greedy</td>
+				<td>misc 1</td>
+				<td>2074</td>
+				<td>17.8</td>
+			</tr>
+
+			<tr>
+				<td>a-star</td>
+				<td>misc 2</td>
+				<td>2130</td>
+				<td>9.8</td>
+				<td></td>
+				<td>greedy</td>
+				<td>misc 2</td>
+				<td>161</td>
+				<td>9.8</td>
+			</tr>
+
+			<tr>
+				<td>a-star</td>
+				<td>narrow1 1</td>
+				<td>934</td>
+				<td>8</td>
+				<td></td>
+				<td>greedy</td>
+				<td>narrow1 1</td>
+				<td>81</td>
+				<td>8</td>
+			</tr>
+
+			<tr>
+				<td>a-star</td>
+				<td>narrow1 2</td>
+				<td>1469</td>
+				<td>8</td>
+				<td></td>
+				<td>greedy</td>
+				<td>narrow1 2</td>
+				<td>770</td>
+				<td>9</td>
+			</tr>
+
+			<tr>
+				<td>a-star</td>
+				<td>narrow2 1</td>
+				<td>1394</td>
+				<td>11.4</td>
+				<td></td>
+				<td>greedy</td>
+				<td>narrow2 1</td>
+				<td>138</td>
+				<td>11.4</td>
+			</tr>
+
+			<tr>
+				<td>a-star</td>
+				<td>narrow2 2</td>
+				<td>1469</td>
+				<td>8</td>
+				<td></td>
+				<td>greedy</td>
+				<td>narrow2 2</td>
+				<td>770</td>
+				<td>9</td>
+			</tr>
+		</table>
+		<p>Table 2. Algorithm Outcome in Multiple Scenes with Different Start and Goal Point</p>
+	</section>
+	<section class="para_04">
+		<p>
+			From the statistics and figure above, it is easy to see that A-star has a stable performance. 
+			A-star's performance in the same map wasn't affected significantly by where it starts and ends. 
+			On the other hand, GBFS is observed to perform extremly well in both time and getting the optimal path when there is no or few obstacles on its direct path towards the goal.
+			But when that is not the case, GBFS produce a path that detours and sometimes goes in the opposite direction.
+			In conclusion, GBFS saves computing power significantly if the environment has simple geometry and are expected to have low interference.
+			While A-star is versatile but cost more time and power to make a more precise prediction.
+		</p>
+	</section>
+</body>
+</html>
